@@ -1,0 +1,18 @@
+<h1>TODO List</h1>
+<p>A place to store the things you have to do!</p>
+
+<input type="text" class="filter" placeholder="Filter your to-dos" ng-model="$ctrl.filter" />
+
+<ol>
+    <li ng-repeat="task in $ctrl.tasks" ng-class="{strikeout: !task.output}">
+        <button class="complete" ng-if="task.output">complete</button>
+        {{task.item}}
+        <button class="close" ng-click="$ctrl.remove(index)">X</button></li>
+</ol>
+
+<div class="bottom">
+    <input type="text" class="list" placeholder="Add your to do" ng-model="$ctrl.todo" />
+    <button class="add" ng-click="$ctrl.add()">Add </button>
+</div>
+
+<!-- | filter: $ctrl.filter ====goes in li after $ctrl.tasks -->
